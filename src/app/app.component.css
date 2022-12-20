@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: normal 1rem Arial, Helvetica, sans-serif;
+  color: #334455;
+}
+
+.container {
+  margin: 10px auto;
+  width: 95vw;
+  border: 1px solid black;
+  min-height: 100vh;
+  max-width: 1600px;
+  font: normal 1rem Arial, Helvetica, sans-serif;
+}
+
+@media all and (max-width: 450px) {
+  .container {
+    min-width: 260px;
+  }
+}
+
+
+/* navigation */
+
+nav {
+  background: #00bcd4;
+  border-bottom: 2px solid #01a4bb;
+  text-align: center;
+  position: relative;
+}
+
+nav:before {
+  content: "Offices";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  color: white;
+  font-size: 3rem;
+}
+
+nav ul, .letter {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  flex: 0 0 12.5%;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+  padding: 20px 0 20px 0;
+  width: 100%;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom: 2px solid yellow;
+  border-top: 2px solid yellow;
+}
+
+nav a.selected {
+  border-bottom: 2px solid yellow;
+}
+
+
+
+/* media queries */
+
+@media all and (max-width: 800px) {
+  nav li {
+    flex: 0 0 30%;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+}
+@media all and (max-width: 450px) {
+  nav:before {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav li {
+    flex-basis: 51%;
+  }
+
+  nav li a {
+    text-align: center;
+    padding-right: 1rem;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+  }
+
+  nav li a:hover {
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    border-right: 2px solid yellow;
+    border-left: 2px solid yellow;
+  }
+
+  nav li a.selected {
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid yellow;
+  }
+}
